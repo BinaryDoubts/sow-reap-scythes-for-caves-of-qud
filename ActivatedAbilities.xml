@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<activatedabilities>
+    <ability Command="SowReap_CommandHarvestMoon">
+        <description>
+            <p>You make a sweeping attack in a chosen direction, hitting the space targeted and one on each side. Any opponents who are Ready for Harvest take double damage and clear the status.</p>
+            <br />
+            <statline Name="Cooldown" Unit="round"/>
+        </description>
+        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+    </ability>
+    <ability Command="SowReap_CommandScytheVaultingSlash">
+        <description>
+            <p>You flip yourself over an adjacent opponent, landing in the space behind them and attacking them along the way. If you hit and the opponent is Ready for Harvest, they lose the status and become bamboozled: confused and knocked prone.</p>
+            <br />
+            <statline Name="Cooldown" Unit="round"/>
+        </description>
+        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+    </ability>
+</activatedabilities>

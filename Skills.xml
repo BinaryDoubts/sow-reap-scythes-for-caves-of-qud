@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<skills>
+    <skill Name = "Scythe" 
+        Class = "SowReap_ScytheSkill" 
+        Description = "You are skilled at wielding scythes as weapons." 
+        Cost = "100" 
+        Attribute = "Agility" 
+        Tile="Abilities/sw_skill_single_weapon_fighting.png" 
+        Foreground="y" 
+        Detail="W"
+    >
+        <power Name="Scythe Proficiency" 
+            Cost="0" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheExpertise" 
+            Snippet="the scythe" 
+            Description="You get +2 to hit with scythes.
+Opponents you hit with your scythe's basic attack have a 25% chance to gain the Ready For Harvest status, making them vulnerable to other scythe abiltiies." 
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+        <power Name="Sow" 
+            Cost="50" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheSow" 
+            Snippet="the scythe" 
+            Description="You get an additional +2 to hit when attacking plants or fungi.
+Your chance to inflict Ready For Harvest on basic scythe attacks increases to 50%. 
+You collect an additional ingredient when you use Harvestry." 
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+        <power Name="Harvest Moon" 
+            Cost="200" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheHarvestMoon" 
+            Snippet="the scythe" 
+            Description="Activated; cooldown 50. You make a sweeping attack in a chosen direction, hitting three adjacent spaces at once. Any opponents you hit who are Ready for Harvest take double damage and clear the status."
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+        <power Name="Cut Down" 
+            Cost="150" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheCutDown" 
+            Snippet="the scythe" 
+            Description="Activated; cooldown 50. Scythe attack. If you hit and penetrate, dismember one of your target's limbs and inflict bleeding (stats). If you hit and the target is Ready for Harvest, dismember an additional appendage, inflict additional bleeding, and clear the status." 
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+        <power Name="Vaulting Slash" 
+            Cost="100" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheVaultingSlash" 
+            Snippet="the scythe" 
+            Description="Activated; cooldown 50. You flip yourself over an adjacent opponent, landing in the space behind them and attacking them along the way. If you hit and the opponent is Ready for Harvest, they lose the status and become bamboozled: confused (willpower save; diffiulty 20 + your highest modifier between strength and agility) and knocked prone."
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+        <power Name="Swirlwhind" 
+            Cost="100" 
+            Attribute="Strength" 
+            Minimum="0" 
+            Class="SowReap_ScytheWhirlwind" 
+            Snippet="the scythe" 
+            Description="Activated; cooldown 50. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the concentrated gas mix on one adjacent space. If the target space is occupied by an opponent, they immediately become Ready for Harvest."
+            Tile="Abilities/sw_skill_axe_proficiency.png" 
+            Foreground="y" Detail="R"
+        />
+
+    </skill>
+</skills>
