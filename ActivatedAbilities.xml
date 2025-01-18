@@ -2,15 +2,31 @@
 <activatedabilities>
     <ability Command="SowReap_CommandHarvestMoon">
         <description>
-            <p>You make a sweeping attack in a chosen direction, hitting the space targeted and one on each side. Any opponents who are Ready for Harvest take double damage and clear the status.</p>
+            <p>You make a sweeping attack in a chosen direction, hitting three adjacent spaces at once. Any opponents you hit who are ready for harvest take double damage.</p>
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
     </ability>
-    <ability Command="SowReap_CommandScytheVaultingSlash">
+    <ability Command="SowReap_CommandVaultingSlash">
         <description>
-            <p>You flip yourself over an adjacent opponent, landing in the space behind them and attacking them along the way. If you hit and the opponent is Ready for Harvest, they lose the status and become bamboozled: confused and knocked prone.</p>
+            <p>You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone.</p>
+            <br />
+            <statline Name="Cooldown" Unit="round"/>
+        </description>
+        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+    </ability>
+    <ability Command="SowReap_CommandCutDown">
+        <description>
+            <p>Scythe attack. If you hit and penetrate, dismember one of your target's mobility-granting appendages and inflict bleeding. If the target is ready for harvest, dismember an additional appendage and inflict additional bleeding.</p>
+            <br />
+            <statline Name="Cooldown" Unit="round"/>
+        </description>
+        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+    </ability>
+    <ability Command="SowReap_CommandWhirlwind">
+        <description>
+            <p>You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the gas mix on a chosen space. If there's an opponent in the space, they immediately become ready for harvest.</p>
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>

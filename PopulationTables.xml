@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<populations>
+  <population Name = "Melee Weapons 1C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 2C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe1" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 3C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe2" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 4C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe3" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 5C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe4" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 6C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe5" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 7C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe6" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+  <population Name = "Melee Weapons 8C" Load = "Merge">
+    <group Name="Items" Load="Merge">
+      <object Blueprint="SowReap_Scythe7" Weight = "20" Number = "1"/>
+    </group>
+  </population>
+
+
+</populations>

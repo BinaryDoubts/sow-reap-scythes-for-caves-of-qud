@@ -16,7 +16,8 @@
             Class="SowReap_ScytheExpertise" 
             Snippet="the scythe" 
             Description="You get +2 to hit with scythes.
-Opponents you hit with your scythe's basic attack have a 25% chance to gain the Ready For Harvest status, making them vulnerable to other scythe abiltiies." 
+Opponents you hit with a basic scythe attack have a 25% chance to become ready for harvest. 
+Active scythe abilities consume the status to increase their effect." 
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
         />
@@ -27,7 +28,7 @@ Opponents you hit with your scythe's basic attack have a 25% chance to gain the 
             Class="SowReap_ScytheSow" 
             Snippet="the scythe" 
             Description="You get an additional +2 to hit when attacking plants or fungi.
-Your chance to inflict Ready For Harvest on basic scythe attacks increases to 50%. 
+Your chance to make opponents ready for harvest increases to 50%. 
 You collect an additional ingredient when you use Harvestry." 
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
@@ -38,7 +39,7 @@ You collect an additional ingredient when you use Harvestry."
             Minimum="0" 
             Class="SowReap_ScytheHarvestMoon" 
             Snippet="the scythe" 
-            Description="Activated; cooldown 50. You make a sweeping attack in a chosen direction, hitting three adjacent spaces at once. Any opponents you hit who are Ready for Harvest take double damage and clear the status."
+            Description="Activated; cooldown 50. You make a sweeping attack in a chosen direction, hitting three spaces at once. Any opponents you hit who are ready for harvest take double damage."
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
         />
@@ -48,7 +49,7 @@ You collect an additional ingredient when you use Harvestry."
             Minimum="0" 
             Class="SowReap_ScytheCutDown" 
             Snippet="the scythe" 
-            Description="Activated; cooldown 50. Scythe attack. If you hit and penetrate, dismember one of your target's limbs and inflict bleeding (stats). If you hit and the target is Ready for Harvest, dismember an additional appendage, inflict additional bleeding, and clear the status." 
+            Description="Activated; cooldown 50. Scythe attack. If you hit and penetrate, dismember one of your target's mobility-granting appendages and inflict bleeding. If the target is ready for harvest, dismember an additional appendage and inflict additional bleeding." 
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
         />
@@ -58,17 +59,17 @@ You collect an additional ingredient when you use Harvestry."
             Minimum="0" 
             Class="SowReap_ScytheVaultingSlash" 
             Snippet="the scythe" 
-            Description="Activated; cooldown 50. You flip yourself over an adjacent opponent, landing in the space behind them and attacking them along the way. If you hit and the opponent is Ready for Harvest, they lose the status and become bamboozled: confused (willpower save; diffiulty 20 + your highest modifier between strength and agility) and knocked prone."
+            Description="Activated; cooldown 50. You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone."
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
         />
-        <power Name="Swirlwhind" 
+        <power Name="Swhirlwind" 
             Cost="100" 
             Attribute="Strength" 
             Minimum="0" 
             Class="SowReap_ScytheWhirlwind" 
             Snippet="the scythe" 
-            Description="Activated; cooldown 50. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the concentrated gas mix on one adjacent space. If the target space is occupied by an opponent, they immediately become Ready for Harvest."
+            Description="Activated; cooldown 50. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the gas mix on an adjacent space. If the space is occupied by an opponent, they immediately become ready for harvest."
             Tile="Abilities/sw_skill_axe_proficiency.png" 
             Foreground="y" Detail="R"
         />

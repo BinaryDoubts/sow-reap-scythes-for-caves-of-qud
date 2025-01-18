@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects>
-	<object Name="SowReapUnknownScythe" Inherits="BaseUnknown">
-		<part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sow_reap_scythe_1.png" />
-		<part Name="Description" Short="A sweeping chine arches out from a sturdy snath." />
-	</object>
+  <object Name="SowReap_UnknownScythe" Inherits="BaseUnknown">
+	  <part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sow_reap_scythe_1.png" />
+	  <part Name="Description" Short="A sweeping chine arches out from a sturdy snath." />
+  </object>
 
-  <object Name="SowReapBaseScythe" Inherits="MeleeWeapon">
+  <object Name="SowReap_BaseScythe" Inherits="MeleeWeapon">
     <part Name="MeleeWeapon" Skill="SowReap_ScytheSkill" />
     <tag Name="Mods" Value="BladeMods,WeaponMods,CommonMods" />
     <part Name="Physics" Weight="5" />
@@ -16,14 +16,107 @@
 	  <tag Name="EquipSound" Value="Sounds/Equip/sfx_equip_weapon_blade_long_metal_light" />
 	</object>
 
-    <object Name="SowReapScythe1" Inherits="SowReapBaseScythe">
-        <part Name="Render" DisplayName="{{w|bronze}} two-handed scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
-        <part Name="Physics" Weight="9" UsesTwoSlots="true" />
-        <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="1" BaseDamage="1d6" Skill="SowReap_ScytheSkill" />
-        <part Name="Commerce" Value="20" />
-        <part Name="Description" Short="Nicks pit the metal of the sweeping scythe-blade, evidence of a losing battle fought against encroaching foliage." />
-        <part Name="Metal" />
-        <tag Name="Tier" Value="0" />
-            <stag Name="Contemporary" />
-    </object>
+  <object Name="SowReap_Scythe" Inherits="SowReap_BaseScythe">
+      <part Name="Render" DisplayName="{{w|bronze}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+      <part Name="Physics" Weight="9" UsesTwoSlots="true" />
+      <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="1" BaseDamage="1d4" Skill="SowReap_ScytheSkill" />
+      <part Name="Commerce" Value="5" />
+      <part Name="Description" Short="Nicks pit the metal of the sweeping scythe, evidence of a hundred harvests spelled out in timeworn blade-wear." />
+      <part Name="Metal" />
+      <tag Name="Tier" Value="0" />
+      <stag Name="Contemporary" />
+  </object>
+
+  <object Name="SowReap_Scythe1" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="iron scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="9" UsesTwoSlots="true" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="2" BaseDamage="1d4+1" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="15" />
+    <part Name="Description" Short="Iron was taught the shape of the moon's wane, then lashed to a weighty haft." />
+    <part Name="Metal" />
+    <tag Name="Tier" Value="1" />
+
+  </object>
+
+  <object Name="SowReap_Scythe2" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{Y|steel}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="10" UsesTwoSlots="true" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="3" BaseDamage="1d6+1" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="30" />
+    <part Name="Description" Short="Glistening steel drinks in the dawn. A razorhoned edge awaits use against the implacable verdure." />
+    <part Name="Metal" />
+    <tag Name="Tier" Value="2" />
+
+  </object>
+
+  <object Name="SowReap_Scythe3" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{b|carbide}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="12" UsesTwoSlots="true" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="4" BaseDamage="1d8+1" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="50" />
+    <part Name="Description" Short="Azure battle-metal was forged with great care into a sharp crescent at the head of a mighty quarterstaff." />
+    <part Name="Metal" />
+    <tag Name="Tier" Value="3" />
+
+  </object>
+
+  <object Name="SowReap_Scythe4" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{b|folded carbide}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="15" UsesTwoSlots="true" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="1d8+2" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="75" />
+    <part Name="Description" Short="A ploughshare has been hammered back into a blade. Honed carbide gleams with the reflected fear of a thousand harvest-crops." />
+    <part Name="Metal" />
+    <tag Name="Tier" Value="4" />
+
+  </object>        
+
+  <object Name="SowReap_Scythe5" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{K|fullerite}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="19" UsesTwoSlots="true" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="1d8+3" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="150" />
+    <part Name="Description" Short="A curving blackmetal blade spirals around an unseen ecliptic. A bleak filigree crawls its way up the carbonwrapped haft." />
+    <part Name="Metal" />
+    <tag Name="Tier" Value="5" />
+
+  </object>    
+
+  <object Name="SowReap_Scythe6" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{K|{{crysteel|crysteel}} scythe}}" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="6" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="1d8+4" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="400" />
+    <part Name="Description" Short="A Fibonacci-perfect metal arc, encased in glorious vanadium, was cruelly severed and transplanted onto the head of a hexacarbon strut." />
+    <part Name="Metal" />
+    <part Name="Crysteel" />
+    <tag Name="Tier" Value="6" />
+
+  </object>   
+    <object Name="SowReap_Scythe7" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{K|flawless {{crysteel|crysteel}} scythe}}" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="6" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="8" BaseDamage="1d8+5" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="800" />
+    <part Name="Description" Short="A Fibonacci-perfect metal arc, encased in glorious vanadium, was severed and transplanted onto the head of a brutish hexacarbon strut. Sublunar servitors laboured long centuries, culling unworthy blades until only the perfected remained." />
+    <part Name="Metal" />
+    <part Name="Crysteel" />
+    <tag Name="Flawless" />
+    <tag Name="Tier" Value="7" />
+
+  </object>   
+
+  <object Name="SowReap_Scythe8" Inherits="SowReap_BaseScythe">
+    <part Name="Render" DisplayName="{{zetachrome}} scythe" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;w" />
+    <part Name="Physics" Weight="10" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
+    <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="9" BaseDamage="1d10+5" Skill="SowReap_ScytheSkill" />
+    <part Name="Commerce" Value="1500" />
+    <part Name="Description" Short="Pre-hadronic plasma was stolen from a forbidden 6D manifold and condensed into a crescent of allcutting singularity-steel." />
+    <part Name="Metal" />
+    <part Name="Zetachrome" />
+    <tag Name="Flawless" />
+    <tag Name="Tier" Value="8" />
+		<stag Name="Historical" />
+  </object>   
+
 </objects>

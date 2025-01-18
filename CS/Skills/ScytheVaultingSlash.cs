@@ -79,7 +79,8 @@ namespace XRL.World.Parts.Skill{
             string targetDirection = PickDirectionS("Vaulting Slash");
             Cell targetCell = ParentObject.GetCurrentCell().GetCellFromDirection(targetDirection);
             GameObject target = targetCell.GetCombatTarget(
-                Attacker: ParentObject
+                Attacker: ParentObject,
+                IgnoreFlight: true
             );
             if (target != null){ //need something to hit
                 if (targetCell.IsEmptyOfSolid(IncludeCombatObjects: false)){ //check cell is passable (ie, target isn't like, kudzu on a wall)
@@ -95,15 +96,17 @@ namespace XRL.World.Parts.Skill{
 
                         //trigger attack as part of move, note that handling special procs from ready for harvest are handled in the core scythe.cs
                         MeleeAttackResult attackRes = Combat.MeleeAttackWithWeapon(
-                        Attacker: ParentObject,
-                        Defender: target,
-                        Weapon: scythe,
-                        BodyPart: ParentObject.Body?.FindDefaultOrEquippedItem(scythe),
-                        Properties: "SowReap_NoReadyForHarvest,SowReap_VaultingSlashAttack",
-                        Primary: true        
-                    );
+                            Attacker: ParentObject,
+                            Defender: target,
+                            Weapon: scythe,
+                            BodyPart: ParentObject.Body?.FindDefaultOrEquippedItem(scythe),
+                            Properties: "SowReap_NoReadyForHarvest,SowReap_VaultingSlashAttack",
+                            Primary: true        
+                        );
                         ParentObject.DirectMoveTo(targetCell: destinationCell, EnergyCost: 1000, Forced: false, IgnoreCombat: true, IgnoreGravity: true);
                         ParentObject.Gravitate();
+                        SowReap_ScytheVaultingSlash skill = ParentObject.GetPart<SowReap_ScytheVaultingSlash>();
+                        skill.CooldownMyActivatedAbility(skill.ActivatedAbilityID, COOLDOWN);
                     }
                     else{
                         ParentObject.Fail("There's something blocking your vault's destination.");
