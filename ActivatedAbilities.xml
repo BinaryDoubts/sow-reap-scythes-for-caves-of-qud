@@ -6,7 +6,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+        <UITile Tile="Items/sow_reap_scythe.png" Foreground="r" Detail="y" />
     </ability>
     <ability Command="SowReap_CommandVaultingSlash">
         <description>
@@ -14,7 +14,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+        <UITile Tile="Items/sow_reap_scythe.png" Foreground="g" Detail="y" />
     </ability>
     <ability Command="SowReap_CommandCutDown">
         <description>
@@ -22,7 +22,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+        <UITile Tile="Items/sow_reap_scythe.png" Foreground="b" Detail="y" />
     </ability>
     <ability Command="SowReap_CommandWhirlwind">
         <description>
@@ -30,6 +30,6 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe_1.png" Foreground="W" Detail="R" />
+        <UITile Tile="Items/sow_reap_scythe.png" Foreground="O" Detail="y" />
     </ability>
 </activatedabilities>

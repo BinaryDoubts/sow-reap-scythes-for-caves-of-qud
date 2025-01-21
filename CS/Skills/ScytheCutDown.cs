@@ -75,7 +75,7 @@ namespace XRL.World.Parts.Skill{
 
         public bool PerformCutDown(){
             GameObject Attacker = ParentObject;
-            if (!Attacker.HasPrimaryWeaponOfType("SowReap_ScytheSkill")){ //check for scythe
+            if (!Attacker.HasPrimaryWeaponOfType("SowReap_Scythe")){ //check for scythe
                 Attacker.Fail("You must have a scythe equipped in your primary appendage to perform Vaulting Slash.");
                 return false;
             }
@@ -91,7 +91,7 @@ namespace XRL.World.Parts.Skill{
                         return false;
                     }
 
-                    GameObject scythe = Attacker.GetPrimaryWeaponOfType("SowReap_ScytheSkill");
+                    GameObject scythe = Attacker.GetPrimaryWeaponOfType("SowReap_Scythe");
                     List<BodyPart> legs = GetValidLegs(target);
 
                     if (legs.Count < 1){
@@ -101,8 +101,8 @@ namespace XRL.World.Parts.Skill{
 
                     if (target == Attacker && Attacker.IsPlayer() && Popup.ShowYesNo("Are you sure you want to cut " + Attacker.itself + " down?") != 0){
                         DislimberTarget(Attacker, target, scythe, legs); //cut your own legs off
-                        SowReap_ScytheCutDown skill = ParentObject.GetPart<SowReap_ScytheCutDown>();
-                        skill.CooldownMyActivatedAbility(skill.ActivatedAbilityID, COOLDOWN);
+                        SowReap_ScytheCutDown s = ParentObject.GetPart<SowReap_ScytheCutDown>();
+                        s.CooldownMyActivatedAbility(s.ActivatedAbilityID, COOLDOWN);
                         return true;
                     }
 
@@ -116,6 +116,8 @@ namespace XRL.World.Parts.Skill{
                     );
 
                     Attacker.UseEnergy(1000, "Skill Cut Down");
+                    SowReap_ScytheCutDown skill = ParentObject.GetPart<SowReap_ScytheCutDown>();
+                    skill.CooldownMyActivatedAbility(skill.ActivatedAbilityID, COOLDOWN);
 
                     if (attackRes.Penetrations > 0){ //on hit+penetrate, also cut off a leg and make 'em bleed
                         DislimberTarget(Attacker, target, scythe, legs);

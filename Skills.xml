@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <skills>
     <skill Name = "Scythe" 
-        Class = "SowReap_ScytheSkill" 
-        Description = "You are skilled at wielding scythes as weapons." 
+        Class = "SowReap_Scythe" 
+        Description = "You are skilled with scythes." 
         Cost = "100" 
-        Attribute = "Agility" 
-        Tile="Abilities/sw_skill_single_weapon_fighting.png" 
-        Foreground="y" 
-        Detail="W"
+        Attribute = "Agility|Strength" 
+        Minimum="0" 
+        Tile="Items/sow_reap_scythe.png" 
+        Foreground="w" 
+        Detail="y"
     >
         <power Name="Scythe Proficiency" 
             Cost="0" 
@@ -16,63 +17,67 @@
             Class="SowReap_ScytheExpertise" 
             Snippet="the scythe" 
             Description="You get +2 to hit with scythes.
-Opponents you hit with a basic scythe attack have a 25% chance to become ready for harvest. 
-Active scythe abilities consume the status to increase their effect." 
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
+Opponents you hit with a basic scythe attack have a 15% chance to become ready for harvest. 
+Active scythe abilities consume the status to increase their effect.
+All scythe abilities work the same for sickles." 
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="c" Detail="y"
         />
         <power Name="Sow" 
             Cost="50" 
             Attribute="Strength" 
             Minimum="0" 
             Class="SowReap_ScytheSow" 
-            Snippet="the scythe" 
+            Snippet="sowing" 
             Description="You get an additional +2 to hit when attacking plants or fungi.
-Your chance to make opponents ready for harvest increases to 50%. 
+Your chance to make opponents ready for harvest increases to 30%. 
 You collect an additional ingredient when you use Harvestry." 
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
-        />
-        <power Name="Harvest Moon" 
-            Cost="200" 
-            Attribute="Strength" 
-            Minimum="0" 
-            Class="SowReap_ScytheHarvestMoon" 
-            Snippet="the scythe" 
-            Description="Activated; cooldown 50. You make a sweeping attack in a chosen direction, hitting three spaces at once. Any opponents you hit who are ready for harvest take double damage."
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="C" Detail="y"
         />
         <power Name="Cut Down" 
             Cost="150" 
-            Attribute="Strength" 
-            Minimum="0" 
+            Attribute="Agility|Strength" 
+            Minimum="21|17" 
             Class="SowReap_ScytheCutDown" 
-            Snippet="the scythe" 
+            Snippet="cutting down" 
             Description="Activated; cooldown 50. Scythe attack. If you hit and penetrate, dismember one of your target's mobility-granting appendages and inflict bleeding. If the target is ready for harvest, dismember an additional appendage and inflict additional bleeding." 
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="g" Detail="y"
         />
         <power Name="Vaulting Slash" 
-            Cost="100" 
-            Attribute="Strength" 
-            Minimum="0" 
+            Cost="150" 
+            Attribute="Agility|Strength" 
+            Minimum="17|21" 
             Class="SowReap_ScytheVaultingSlash" 
-            Snippet="the scythe" 
-            Description="Activated; cooldown 50. You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone."
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
+            Snippet="vaulting" 
+            Description="Activated; cooldown 40. You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone."
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="b" Detail="y"
         />
         <power Name="Swhirlwind" 
             Cost="100" 
-            Attribute="Strength" 
-            Minimum="0" 
+            Attribute="Strength|Agility" 
+            Minimum="20|20" 
             Class="SowReap_ScytheWhirlwind" 
-            Snippet="the scythe" 
-            Description="Activated; cooldown 50. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the gas mix on an adjacent space. If the space is occupied by an opponent, they immediately become ready for harvest."
-            Tile="Abilities/sw_skill_axe_proficiency.png" 
-            Foreground="y" Detail="R"
+            Snippet="swirling" 
+            Description="Activated; cooldown 40. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the gas mix on an adjacent space. If the space is occupied by an opponent, they immediately become ready for harvest."
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="O" Detail="y"
         />
+        <power Name="Harvest Moon" 
+            Cost="200" 
+            Attribute="Agility|Strength" 
+            Minimum="23|23" 
+            Class="SowReap_ScytheHarvestMoon" 
+            Snippet="harvesting" 
+            Description="Activated; cooldown 60. You make a sweeping attack in a chosen direction, hitting three spaces at once. Any opponents you hit who are ready for harvest take double damage."
+            Tile="Items/sow_reap_scythe.png" 
+            Foreground="r" Detail="y"
+        />
+
+
+
 
     </skill>
 </skills>

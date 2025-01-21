@@ -12,7 +12,7 @@ using XRL.World.Parts;
 namespace XRL.World.Parts.Skill{
     [Serializable]
     class SowReap_ScytheWhirlwind : BaseSkill{
-        public static readonly int COOLDOWN = 50;
+        public static readonly int COOLDOWN = 40;
         public static readonly string COMMAND_NAME = "SowReap_CommandWhirlwind";
 
         public Guid ActivatedAbilityID = Guid.Empty;
@@ -70,7 +70,7 @@ namespace XRL.World.Parts.Skill{
         //MAIN
         public bool PerformWhirlwind(){
             GameObject Attacker = ParentObject;
-            if (!Attacker.HasPrimaryWeaponOfType("SowReap_ScytheSkill")){ //check for scythe
+            if (!Attacker.HasPrimaryWeaponOfType("SowReap_Scythe")){ //check for scythe
                 Attacker.Fail("You must have a scythe equipped in your primary appendage to perform Swhirlwind.");
                 return false;
             }
@@ -132,9 +132,13 @@ namespace XRL.World.Parts.Skill{
                         Extra: "over to a nearby space"
                     );
                 }
+                Attacker.UseEnergy(1000, "Skill Swhirlwind");
+                SowReap_ScytheWhirlwind skill = ParentObject.GetPart<SowReap_ScytheWhirlwind>();
+                skill.CooldownMyActivatedAbility(skill.ActivatedAbilityID, COOLDOWN);
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

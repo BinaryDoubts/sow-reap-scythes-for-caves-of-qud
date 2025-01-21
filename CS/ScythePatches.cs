@@ -25,7 +25,7 @@ namespace SowReap.HarmonyPatches{
         [HarmonyPatch("AttemptHarvest")]
         [HarmonyPostfix]
         static void Postfix(GameObject who, Harvestable __instance, bool __result){
-            if (__result && who.IsPlayer() && who.HasSkill("SowReap_ScytheSkill")){
+            if (__result && who.IsPlayer() && who.HasSkill("SowReap_Scythe")){
                 //if (Stat.Rnd(1, 20) > 10){
                     string name = GameObject.Create(__instance.OnSuccess).GetDisplayName();
                     who.TakeObject(__instance.OnSuccess, NoStack: false, Silent: true, 0, 0, 0, null, null, null, null, null);
@@ -34,4 +34,47 @@ namespace SowReap.HarmonyPatches{
             }
         }
     }
+
+    [HarmonyPatch(typeof(XRL.World.RelicGenerator))]
+    class SowReap_RelicGetTypePatch{
+        [HarmonyPatch("GetType")]
+        [HarmonyPostfix]
+        static void Postfix(ref GameObject Object, ref string __result){
+            MeleeWeapon scythe = Object.GetPart<MeleeWeapon>();
+            if (scythe != null && scythe.Skill == "SowReap_Scythe"){
+                __result = "SowReap_Scythe";
+            }
+
+        }
+    }
+
+    [HarmonyPatch(typeof(XRL.World.RelicGenerator))]
+    class SowReap_RelicGetSubtypePatch{
+        [HarmonyPatch("GetSubtype")]
+        [HarmonyPostfix]
+        static void Postfix(ref string type, ref string __result){
+            if (type == "SowReap_Scythe"){
+                __result = "weapon";
+            }
+            if (type == "scythe"){
+                __result = "weapon";
+            }
+            if (type == "sickle"){
+                __result = "weapon";
+            }
+
+        }
+    }
+
+    [HarmonyPatch(typeof(XRL.World.RelicGenerator))]
+    class SowReap_RelicInitPatch{
+        [HarmonyPatch("Init")]
+        [HarmonyPostfix]
+        static void Postfix(){
+            foreach (string t in RelicGenerator.Types){
+                UnityEngine.Debug.LogError(t);
+            }
+        }
+    }
+
 }

@@ -21,7 +21,7 @@ namespace XRL.World.Parts.Skill{
         }
         public override bool HandleEvent(GetToHitModifierEvent E)
         {
-            if (E.Actor == ParentObject && E.Checking == "Actor" && E.Skill == "SowReap_ScytheSkill" && E.Melee)
+            if (E.Actor == ParentObject && E.Checking == "Actor" && E.Skill == "SowReap_Scythe" && E.Melee)
             {
                 E.Modifier += hitBonus;
                 if (E.Target.HasTagOrProperty("LivePlant") || E.Target.HasTagOrProperty("LiveFungus"))

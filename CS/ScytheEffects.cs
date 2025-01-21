@@ -37,8 +37,9 @@ namespace XRL.World.Effects
                 return false;
             }
 
+            //massive text
             Object?.PlayWorldSound("Sounds/StatusEffects/sfx_statusEffect_physicalRupture");
-            Object?.ParticleText("*ready for harvest*", IComponent<GameObject>.ConsequentialColorChar(null, Object));
+            Object?.ParticleText(Text: "*ready for harvest*", Color: IComponent<GameObject>.ConsequentialColorChar(null, Object));
             
             if (Object != null && Object.Equipped?.IsPlayer() == true)
             {

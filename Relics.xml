@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<relics>
+    <relictypes>
+        <relictype Name = "SowReap_Scythe" />
+    </relictypes>
+
+    <relictypemappings>
+        <relictypemapping Name = "scythe" Type = "SowReap_Scythe"/>
+    </relictypemappings>
+</relics>
+

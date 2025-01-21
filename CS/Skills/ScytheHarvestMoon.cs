@@ -11,6 +11,8 @@ using SowReap.Utilities;
 using XRL.World;
 using HarmonyLib;
 using System.Linq;
+using Genkit;
+using Microsoft.CodeAnalysis;
 
 /*TODO: 
 - Add/improve juice
@@ -20,7 +22,7 @@ namespace XRL.World.Parts.Skill{
     [Serializable]
     class SowReap_ScytheHarvestMoon : BaseSkill
     {
-        public static readonly int COOLDOWN = 50;
+        public static readonly int COOLDOWN = 60;
         public static readonly string COMMAND_NAME = "SowReap_CommandHarvestMoon";
         public Guid ActivatedAbilityID = Guid.Empty;
 
@@ -78,7 +80,7 @@ namespace XRL.World.Parts.Skill{
 
         // MAIN
         public bool PerformHarvestMoon(){
-            if (!ParentObject.HasPrimaryWeaponOfType("SowReap_ScytheSkill")){ //check for scythe
+            if (!ParentObject.HasPrimaryWeaponOfType("SowReap_Scythe")){ //check for scythe
                 ParentObject.Fail("You must have a scythe equipped in your primary appendage to perform Harvest Moon.");
                 return false;
             }
@@ -107,15 +109,14 @@ namespace XRL.World.Parts.Skill{
                     AllowInanimate: true,
                     InanimateSolidOnly: true
                 );
-                if (tempTarget != null){
+                if (tempTarget != null && tempTarget.IsHostileTowards(ParentObject)){
                     //XRL.Messages.MessageQueue.AddPlayerMessage("Target found: " + tempTarget.GetDisplayName());
                     combatTargets.Add(tempTarget);
                 }
             }
 
             if (combatTargets.Count() > 0){
-                GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_ScytheSkill");
-                
+                GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_Scythe");
                 foreach (GameObject target in combatTargets){
                     MeleeAttackResult attackRes = Combat.MeleeAttackWithWeapon(
                         Attacker: ParentObject,
@@ -125,13 +126,22 @@ namespace XRL.World.Parts.Skill{
                         Properties: "SowReap_NoReadyForHarvest,SowReap_HarvestMoonAttack",
                         Primary: true        
                     );
-
                     if (attackRes.Hits > 0 && target.HasEffect<SowReap_ReadyForHarvest>()){
                         target.TakeDamage(
                             DamageAmount: attackRes.Damage,
                             FromAttacker: ParentObject,
                             ShowMessage: "after facing the harvester's scythe."
                         );
+                        
+                        Cell targetCell = target.GetCurrentCell();
+
+                        ParentObject.GetDirectionToward(targetCell);
+
+                        Location2D attackerLoc = new Location2D(attackerCell.X, attackerCell.Y);
+                        Location2D targetLoc = new Location2D(targetCell.X, targetCell.Y);
+                        float targetAngle = attackerLoc.AngleTo(targetLoc);
+
+                        target.BloodsplatterCone(SelfSplatter: true, targetAngle, 20);
                         target.RemoveEffect<SowReap_ReadyForHarvest>();
                     }
 

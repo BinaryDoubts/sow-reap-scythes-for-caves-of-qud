@@ -1,0 +1,7 @@
+{
+    "spice": {
+        "itemTypes":{
+            "SowReap_Scythe": ["reaper", "crescent", "harvester", "field-blade"]
+        }
+    }
+}

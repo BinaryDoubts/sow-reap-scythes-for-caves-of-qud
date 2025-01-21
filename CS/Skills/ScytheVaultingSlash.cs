@@ -11,7 +11,7 @@ using XRL.World.Capabilities;
 namespace XRL.World.Parts.Skill{
     [Serializable]
     class SowReap_ScytheVaultingSlash : BaseSkill{
-        public static readonly int COOLDOWN = 50;
+        public static readonly int COOLDOWN = 40;
         public static readonly string COMMAND_NAME = "SowReap_CommandVaultingSlash";
         public Guid ActivatedAbilityID = Guid.Empty;
 
@@ -66,12 +66,12 @@ namespace XRL.World.Parts.Skill{
         }
 
         public bool PerformVaultingSlash(){
-            if (!ParentObject.HasPrimaryWeaponOfType("SowReap_ScytheSkill")){ //check for scythe
+            if (!ParentObject.HasPrimaryWeaponOfType("SowReap_Scythe")){ //check for scythe
                 ParentObject.Fail("You must have a scythe equipped in your primary appendage to perform Vaulting Slash.");
                 return false;
             }
 
-            GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_ScytheSkill");
+            GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_Scythe");
 
             if (!ParentObject.CanMoveExtremities("Vaulting Slash", ShowMessage: true)) //check you can attack
                 return false;
@@ -86,9 +86,9 @@ namespace XRL.World.Parts.Skill{
                 if (targetCell.IsEmptyOfSolid(IncludeCombatObjects: false)){ //check cell is passable (ie, target isn't like, kudzu on a wall)
                     Cell destinationCell = targetCell.GetCellFromDirection(targetDirection);
                     if (destinationCell.IsEmptyOfSolid(IncludeCombatObjects: true)){
-                        Messaging.XDidYToZ( //"[Attacker] vaulted over [target]."
+                        Messaging.XDidYToZ( //"[Attacker] vault over [target]." << needs fix when the attacker isn't "You"
                             Actor: ParentObject,
-                            Verb: "vaulted",
+                            Verb: "vault",
                             Preposition: "over",
                             Object: target
                         );
@@ -103,6 +103,7 @@ namespace XRL.World.Parts.Skill{
                             Properties: "SowReap_NoReadyForHarvest,SowReap_VaultingSlashAttack",
                             Primary: true        
                         );
+                        target.DustPuff(); //
                         ParentObject.DirectMoveTo(targetCell: destinationCell, EnergyCost: 1000, Forced: false, IgnoreCombat: true, IgnoreGravity: true);
                         ParentObject.Gravitate();
                         SowReap_ScytheVaultingSlash skill = ParentObject.GetPart<SowReap_ScytheVaultingSlash>();
@@ -121,7 +122,7 @@ namespace XRL.World.Parts.Skill{
 
             }
             else{
-                ParentObject.Fail("There's no opponent for you to vault over.");
+                ParentObject.Fail("There's no one for you to vault over.");
                 return false;
             }
 
