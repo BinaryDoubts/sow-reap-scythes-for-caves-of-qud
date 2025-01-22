@@ -171,7 +171,7 @@
     <part Name="Physics" Weight="10" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="9" BaseDamage="2d12" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="1500" />
-    <part Name="Description" Short="Pre-hadronic plasma was stolen from a forbidden 6D manifold and condensed into a crescent of allcutting singularity-steel. Titanic energies conspire to hold the blade to haft, fuelled by ribbon-lines of magnetic flux." />
+    <part Name="Description" Short="Pre-hadronic plasma was stolen from a forbidden 6D manifold and condensed into a crescent of allcutting singularity-steel. Titanic energies conspire to hold blade to haft, fuelled by ribbon-lines of magnetic flux." />
     <part Name="Metal" />
     <part Name="Zetachrome" />
     <tag Name="Flawless" />
