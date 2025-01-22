@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<subtypes>
+    <class ID="Callings" Load="Merge"/>
+    <subtype Name="Harvester" Gear="SowReap_StartingGear_ScytheFarmer" Tile="Creatures/SowReap_Harvester.png" ForegroundColor="w" DetailColor="y">
+        <stat Name="Strength" Bonus="2" />
+        <skills>
+            <skill Name="CookingAndGathering" />
+            <skill Name="CookingAndGathering_Harvestry" />
+            <skill Name="SowReap_Scythe" />
+            <skill Name="Survival_SaltmarshSurvival" />
+        </skills>
+        <reputations>
+            <reputation With="Joppa" Value="100" />
+			<reputation With="Farmers" Value="200" />
+	    </reputations>
+        <extrainfo>Starts with random cooking ingredients</extrainfo>
+    </subtype>
+</subtypes>

@@ -81,7 +81,7 @@ namespace XRL.World.Parts.Skill{
             Cell attackerCell = ParentObject.GetCurrentCell();
             Cell targetCell = attackerCell.GetCellFromDirection(targetDirection, false);
 
-            if (targetCell != null && !targetCell.IsSolid()){
+            if (targetCell != null && targetCell != attackerCell && !targetCell.IsSolid()){
                 List<string> orderedDirectionList = new List<string>();
                 int startingIndex = Directions.DirectionList.IndexOf(targetDirection);
                 int currentIndex = startingIndex+1; 
@@ -93,7 +93,7 @@ namespace XRL.World.Parts.Skill{
 
                 List<Cell> targetCells = new List<Cell>
                 {
-                    attackerCell
+                    attackerCell //insert the attacker's cell as the first in the list to be cleared of gas
                 };
                 
                 foreach (string direction in orderedDirectionList){                  
@@ -103,17 +103,19 @@ namespace XRL.World.Parts.Skill{
                 foreach (Cell currentCell in targetCells){ //check each cell for gasses, then relocate them to the target cell
                     List<GameObject> gasses = currentCell.GetObjectsWithPart("Gas");
                     if (gasses.Count > 0){
-                        MessageQueue.AddPlayerMessage("Gasses found: " + gasses.Count);
+                        //MessageQueue.AddPlayerMessage("Gasses found: " + gasses.Count);
                         foreach (GameObject gas in gasses){
                             Gas g = (Gas)gas.GetPart("Gas");
-                            //g.Density *= 2;  too powerful
+                            //g.Density *= 2;  way too powerful, should maybe even be halved
                             gas.DirectMoveTo(targetCell: targetCell, Forced: true, IgnoreGravity: true, IgnoreCombat: true);
                         }
                     }
                 }
 
+                Attacker.PlayWorldSound("Sounds/Abilities/sfx_ability_longBlade_swipe");
+                Attacker.DustPuff();
                 GameObject target = targetCell.GetCombatTarget(Attacker, IgnoreFlight: true);
-                if (target != null){
+                if (target != null){ //doesn't check if target is hostile, maybe worth adding a popup?
                     if (!target.HasEffect<SowReap_ReadyForHarvest>()){
                         target.ApplyEffect(new SowReap_ReadyForHarvest());
                     }

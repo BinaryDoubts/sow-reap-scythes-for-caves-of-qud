@@ -18,7 +18,7 @@ namespace XRL.World.Parts.Skill{
         public static readonly string COMMAND_NAME = "SowReap_CommandCutDown";
 
         public static readonly string BLEED_DAMAGE_BASE = "1d2";
-        public static readonly string BLEED_DAMAGE_ENHANCED = "1d4";
+        public static readonly string BLEED_DAMAGE_ENHANCED = "1d4"; //not used at the moment
         public static readonly int BLEED_SAVE_DIFFICULTY = 35; 
         
         public Guid ActivatedAbilityID = Guid.Empty;
@@ -73,6 +73,7 @@ namespace XRL.World.Parts.Skill{
             return base.HandleEvent(E);
         }
 
+        //MAIN
         public bool PerformCutDown(){
             GameObject Attacker = ParentObject;
             if (!Attacker.HasPrimaryWeaponOfType("SowReap_Scythe")){ //check for scythe
@@ -95,11 +96,11 @@ namespace XRL.World.Parts.Skill{
                     List<BodyPart> legs = GetValidLegs(target);
 
                     if (legs.Count < 1){
-                        Attacker.Fail("The target has no legs for you to cut off.");
+                        Attacker.Fail("The target has no legs for you to cut off."); //technically no one has legs in this game. it's just feet.
                         return false;
                     }
 
-                    if (target == Attacker && Attacker.IsPlayer() && Popup.ShowYesNo("Are you sure you want to cut " + Attacker.itself + " down?") != 0){
+                    if (target == Attacker || !target.IsHostileTowards(Attacker) && Popup.ShowYesNo("Are you sure you want to cut " + target.DisplayName + " down?") != 0){
                         DislimberTarget(Attacker, target, scythe, legs); //cut your own legs off
                         SowReap_ScytheCutDown s = ParentObject.GetPart<SowReap_ScytheCutDown>();
                         s.CooldownMyActivatedAbility(s.ActivatedAbilityID, COOLDOWN);

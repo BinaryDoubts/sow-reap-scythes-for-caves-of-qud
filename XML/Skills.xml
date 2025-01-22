@@ -18,8 +18,7 @@
             Snippet="the scythe" 
             Description="You get +2 to hit with scythes.
 Opponents you hit with a basic scythe attack have a 15% chance to become ready for harvest. 
-Active scythe abilities consume the status to increase their effect.
-All scythe abilities work the same for sickles." 
+Active scythe abilities consume the ready for harvest status to increase their effect."
             Tile="Items/sow_reap_scythe.png" 
             Foreground="c" Detail="y"
         />
@@ -31,7 +30,7 @@ All scythe abilities work the same for sickles."
             Snippet="sowing" 
             Description="You get an additional +2 to hit when attacking plants or fungi.
 Your chance to make opponents ready for harvest increases to 30%. 
-You collect an additional ingredient when you use Harvestry." 
+You collect an additional ingredient whenever you harvest a rare plant."
             Tile="Items/sow_reap_scythe.png" 
             Foreground="C" Detail="y"
         />

@@ -1,9 +1,9 @@
 {
     "id": "sow-reap",
     "title": "Sow and Reap: Scythes for Qud",
-    "description": "Adds a new weapon type: scythes.",
-    "version": "0.1.0",
+    "description": "Adds scythes, sickles, and a new skill tree.",
+    "version": "0.8",
     "author": "BinaryDoubts",
-    "tags": "items",
-    "PreviewImage": "preview.png"
+    "tags": "Items, Skills",
+    "PreviewImage": "SowReapPreview.png"
 }

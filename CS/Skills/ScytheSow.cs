@@ -12,5 +12,7 @@ namespace XRL.World.Parts.Skill{
     class SowReap_ScytheSow : BaseSkill{ //to-hit bonus is handled in ScytheExpertise
 
     }
+
+    //+1 harvest handled in ScythePatches
 }
 

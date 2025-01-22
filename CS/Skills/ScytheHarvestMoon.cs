@@ -15,7 +15,7 @@ using Genkit;
 using Microsoft.CodeAnalysis;
 
 /*TODO: 
-- Add/improve juice
+- Improve juice
 */
 
 namespace XRL.World.Parts.Skill{

@@ -82,7 +82,7 @@ namespace XRL.World.Parts.Skill{
                 Attacker: ParentObject,
                 IgnoreFlight: true
             );
-            if (target != null){ //need something to hit
+            if (target != null && target.IsHostileTowards(ParentObject)){ //need something to hit
                 if (targetCell.IsEmptyOfSolid(IncludeCombatObjects: false)){ //check cell is passable (ie, target isn't like, kudzu on a wall)
                     Cell destinationCell = targetCell.GetCellFromDirection(targetDirection);
                     if (destinationCell.IsEmptyOfSolid(IncludeCombatObjects: true)){
@@ -103,7 +103,11 @@ namespace XRL.World.Parts.Skill{
                             Properties: "SowReap_NoReadyForHarvest,SowReap_VaultingSlashAttack",
                             Primary: true        
                         );
-                        target.DustPuff(); //
+
+                        if (attackRes.Hits > 0){
+                            target.Bloodsplatter();
+                        }
+                        
                         ParentObject.DirectMoveTo(targetCell: destinationCell, EnergyCost: 1000, Forced: false, IgnoreCombat: true, IgnoreGravity: true);
                         ParentObject.Gravitate();
                         SowReap_ScytheVaultingSlash skill = ParentObject.GetPart<SowReap_ScytheVaultingSlash>();

@@ -39,7 +39,10 @@ namespace XRL.World.Effects
 
             //massive text
             Object?.PlayWorldSound("Sounds/StatusEffects/sfx_statusEffect_physicalRupture");
-            Object?.ParticleText(Text: "*ready for harvest*", Color: IComponent<GameObject>.ConsequentialColorChar(null, Object));
+            if (XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestText", "Yes") == "Yes"){
+                Object?.ParticleText(Text: "*ready for harvest*", Color: IComponent<GameObject>.ConsequentialColorChar(null, Object));
+            }
+
             
             if (Object != null && Object.Equipped?.IsPlayer() == true)
             {
@@ -51,6 +54,15 @@ namespace XRL.World.Effects
 
         public override void Remove(GameObject Object){
             base.Remove(Object);
+        }
+
+        public override bool Render(RenderEvent E)
+        {
+            if (Duration > 0 && XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestIcon", "No") == "Yes")
+            {
+                E.RenderEffectIndicator("\xf5", "Effects/ready_for_harvest.png", "&g", "g", 45);
+            }
+            return true;
         }
 
     }

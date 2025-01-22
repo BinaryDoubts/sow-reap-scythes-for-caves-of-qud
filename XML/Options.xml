@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<options>
+    <option ID="Option_SowReap_ShowReadyForHarvestText" DisplayText="Show the floating *ready for harvest* text"
+        Category="Mods: Sow and Reap" Type="Checkbox" Default="Yes" />
+    <option ID="Option_SowReap_ShowReadyForHarvestIcon" DisplayText="Flash a status icon (⌠) on targets who are ready for harvest"
+        Category="Mods: Sow and Reap" Type="Checkbox" Default="No" />
+</options>

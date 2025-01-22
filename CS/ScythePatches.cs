@@ -25,9 +25,20 @@ namespace SowReap.HarmonyPatches{
         [HarmonyPatch("AttemptHarvest")]
         [HarmonyPostfix]
         static void Postfix(GameObject who, Harvestable __instance, bool __result){
-            if (__result && who.IsPlayer() && who.HasSkill("SowReap_Scythe")){
+            if (__result && who.IsPlayer() && who.HasSkill("SowReap_ScytheSow")){
                 //if (Stat.Rnd(1, 20) > 10){
                     string name = GameObject.Create(__instance.OnSuccess).GetDisplayName();
+                    switch (name){ //if the ingredient is common/useless, don't +1 it
+                        case "vinewafer":
+                        case "starapple":
+                        case "spine fruit":
+                        case "Eater's flesh":
+                        case "witchwood bark":
+                        case "plump mushroom":
+                            return;
+                        default:
+                            break;
+                    }
                     who.TakeObject(__instance.OnSuccess, NoStack: false, Silent: true, 0, 0, 0, null, null, null, null, null);
                     XRL.Messages.MessageQueue.AddPlayerMessage("You harvest an extra " + name + "!");
                 //}

@@ -119,5 +119,18 @@
     </group>
   </population>
 
+  <population Name = "SowReap_StartingGear_ScytheFarmer">
+    <group Name="Items" Style="pickeach">
+      <table Name="StartingGear_Common" />
+      <object Blueprint="HalfFullWaterskin" Number="1" />
+      <object Blueprint="Vinewafer Sheaf" Number="8-10" />
+      <object Blueprint="SowReap_Scythe" Number="1" />
+      <object Blueprint="Woven Tunic" Number="1" />
+      <object Blueprint="Farmers Token" Number="1" />         
+      <table Name="Ingredients1" Number="2-5" />
+      <table Name="Cookbooks" Number="1" />
+      <object Blueprint="Witchwood Bark" Number="6-8" />
+    </group>
+  </population>
 
 </populations>
