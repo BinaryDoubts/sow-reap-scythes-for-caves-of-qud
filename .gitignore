@@ -1,0 +1,7 @@
+obj
+bin
+*.bak
+*.next
+*.csproj.user
+*.DotSettings
+*.DotSettings.user
