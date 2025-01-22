@@ -45,7 +45,7 @@ Explore a fully-featured skill tree to master the scythe's fickle crescent blade
 ## Planned Features
 * Unique art for all the skills and abilities
 * Unique scythe variants
-* New quest to acquire God's Mistake, a powerful legendary scythe with some... serious issues
+* New quest to acquire a powerful legendary scythe
 * Better integration into the game's economy, quest rewards, and enemy inventories
 * New sound effects
 * Enemy AI support for scythe skills
