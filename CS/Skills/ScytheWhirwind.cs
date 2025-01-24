@@ -116,9 +116,9 @@ namespace XRL.World.Parts.Skill{
                 Attacker.DustPuff();
                 GameObject target = targetCell.GetCombatTarget(Attacker, IgnoreFlight: true);
                 if (target != null){ //doesn't check if target is hostile, maybe worth adding a popup?
-                    if (!target.HasEffect<SowReap_ReadyForHarvest>()){
+
                         target.ApplyEffect(new SowReap_ReadyForHarvest());
-                    }
+
                     Messaging.XDidYToZ(
                         Actor: Attacker, 
                         Verb: "swirled all nearby gasses", 

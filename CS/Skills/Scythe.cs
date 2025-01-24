@@ -23,8 +23,6 @@ namespace XRL.World.Parts.Skill{
         public override void WeaponMadeCriticalHit(GameObject Attacker, GameObject Defender, GameObject Weapon, string Properties)
         {
             bool proneAttempt = Defender.ApplyEffect(new Prone());
-            if (Attacker.HasSkill("SowReap_Scythe") && !Properties.HasDelimitedSubstring(",", "SowReap_NoReadyForHarvest"))
-                Defender.ApplyEffect(new SowReap_ReadyForHarvest());
             base.WeaponMadeCriticalHit(Attacker, Defender, Weapon, Properties);
         }
 

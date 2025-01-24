@@ -34,7 +34,7 @@ namespace XRL.World.Effects
         public override bool Apply(GameObject Object)
         {
             if (Object.HasEffect<SowReap_ReadyForHarvest>()){
-                return false;
+                Object.RemoveEffect<SowReap_ReadyForHarvest>();
             }
 
             //massive text
