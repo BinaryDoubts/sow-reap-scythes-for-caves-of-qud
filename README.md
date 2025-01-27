@@ -43,12 +43,11 @@ Explore a fully-featured skill tree to master the scythe's fickle crescent blade
 * Spawn any sickle with "SowReap_Sickle" + the tier number
 
 ## Planned Features
-* Unique art for all the skills and abilities
+* Unique art for the skills
+* Unique art for the sickle subclass
 * Unique scythe variants
 * New quest to acquire a powerful legendary scythe
-* Better integration into the game's economy, quest rewards, and enemy inventories
 * New sound effects
-* Enemy AI support for scythe skills
 
 ## Credits/Thanks
 * Scythe design used in the mod's logo is by Lorc under CC BY 3.0, via game-icons.net
