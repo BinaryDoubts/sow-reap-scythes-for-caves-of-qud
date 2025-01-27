@@ -52,4 +52,11 @@ namespace SowReap.Utilities
             return Rand.Next(minInclusive, maxInclusive + 1);
         }
     }
+
+    [HasGameBasedStaticCache]
+    public static class SowReap_Options{
+        public static bool Debug = XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForDebug", "No") == "Yes";
+        public static bool ShowIcon = XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestIcon", "No") == "Yes";
+        public static bool ShowText = XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestText", "Yes") == "Yes";
+    }
 }

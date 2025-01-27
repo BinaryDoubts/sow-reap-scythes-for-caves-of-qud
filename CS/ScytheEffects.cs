@@ -1,4 +1,5 @@
 using System;
+using SowReap.Utilities;
 using XRL.World.Effects;
 
 namespace XRL.World.Effects
@@ -23,7 +24,7 @@ namespace XRL.World.Effects
 
         public override string GetDescription()
         {
-            return "{{b-B-W-g-G|ready for harvest}}";
+            return "{{b-B-W-g-G|ready for harvest}}"; //I don't think this works atm
         }
 
         public override bool UseStandardDurationCountdown()
@@ -33,13 +34,13 @@ namespace XRL.World.Effects
 
         public override bool Apply(GameObject Object)
         {
-            if (Object.HasEffect<SowReap_ReadyForHarvest>()){
+            if (Object.HasEffect<SowReap_ReadyForHarvest>()){ //only one at a time
                 Object.RemoveEffect<SowReap_ReadyForHarvest>();
             }
 
-            //massive text
+            //need better sfx
             Object?.PlayWorldSound("Sounds/StatusEffects/sfx_statusEffect_physicalRupture");
-            if (XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestText", "Yes") == "Yes"){
+            if (SowReap_Options.ShowText){
                 Object?.ParticleText(Text: "*ready for harvest*", Color: IComponent<GameObject>.ConsequentialColorChar(null, Object));
             }
 
@@ -56,10 +57,9 @@ namespace XRL.World.Effects
             base.Remove(Object);
         }
 
-        public override bool Render(RenderEvent E)
+        public override bool Render(RenderEvent E) //shows icon on target (similar to + overwrites wading glyph)
         {
-            if (Duration > 0 && XRL.UI.Options.GetOption("Option_SowReap_ShowReadyForHarvestIcon", "No") == "Yes")
-            {
+            if (Duration > 0 && SowReap_Options.ShowIcon){
                 E.RenderEffectIndicator("\xf5", "Effects/ready_for_harvest.png", "&g", "g", 45);
             }
             return true;

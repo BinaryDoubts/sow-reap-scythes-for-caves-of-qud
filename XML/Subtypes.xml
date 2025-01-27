@@ -2,7 +2,7 @@
 <subtypes>
     <class ID="Callings" Load="Merge"/>
     <subtype Name="Harvester" Gear="SowReap_StartingGear_ScytheFarmer" Tile="Creatures/SowReap_Harvester.png" ForegroundColor="w" DetailColor="y">
-        <stat Name="Strength" Bonus="2" />
+        <stat Name="Toughness" Bonus="2" />
         <skills>
             <skill Name="CookingAndGathering" />
             <skill Name="CookingAndGathering_Harvestry" />

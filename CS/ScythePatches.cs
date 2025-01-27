@@ -82,8 +82,10 @@ namespace SowReap.HarmonyPatches{
         [HarmonyPatch("Init")]
         [HarmonyPostfix]
         static void Postfix(){
-            foreach (string t in RelicGenerator.Types){
-                UnityEngine.Debug.LogError(t);
+            if (SowReap_Options.Debug){
+                foreach (string t in RelicGenerator.Types){
+                        UnityEngine.Debug.LogError(t);
+                }
             }
         }
     }

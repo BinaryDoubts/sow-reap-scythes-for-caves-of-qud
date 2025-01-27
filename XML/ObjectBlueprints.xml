@@ -2,7 +2,7 @@
 <objects>
   <!-- Scythes -->
   <object Name="SowReap_UnknownScythe" Inherits="BaseUnknown">
-	  <part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sow_reap_scythe_1.png" />
+	  <part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sow_reap_scythe1.png" />
 	  <part Name="Description" Short="A sweeping chine arches out from a sturdy snath." />
   </object>
 
@@ -10,7 +10,7 @@
     <part Name="MeleeWeapon" Skill="SowReap_Scythe" />
     <tag Name="Mods" Value="BladeMods,WeaponMods,CommonMods" />
     <part Name="Physics" Weight="5" />
-    <part Name="Render" Tile="items/sow_reap_scythe_1.png" DetailColor="y" />
+    <part Name="Render" Tile="items/sow_reap_scythe1.png" DetailColor="y" />
     <part Name="Examiner" Alternate="SowReapUnknownScythe" />
     <tag Name="BaseObject" Value="*noinherit" />
 		<tag Name="SwingSound" Value="Sounds/Melee/longBlades/sfx_melee_longBlade_metal_swing" />
@@ -48,7 +48,7 @@
   </object>
 
   <object Name = "SowReap_Sickle1" Inherits="SowReap_Scythe1">
-      <part Name="Render" DisplayName="iron sickle" Tile="Items/sow_reap_scythe_1.png" ColorString="&amp;y"/>
+      <part Name="Render" DisplayName="iron sickle" Tile="Items/sow_reap_scythe1.png" ColorString="&amp;y"/>
       <part Name="Physics" Weight="5" UsesTwoSlots="false"/>
       <part Name="MeleeWeapon" MaxStrengthBonus="2" BaseDamage="1d4" Skill="SowReap_Scythe" />
       <part Name="Description" Short="Iron was taught the shape of the moon's wane, then lashed to an abbreviated haft." />
