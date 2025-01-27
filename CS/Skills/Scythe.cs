@@ -52,9 +52,9 @@ namespace XRL.World.Parts.Skill{
                     if (wep != null && wep.Skill == "SowReap_Scythe" && Attacker.HasSkill("SowReap_Scythe")){
 
                         if (!eventParams.HasDelimitedSubstring(",", "SowReap_NoReadyForHarvest")){ //scythe special skills can't apply Ready for Harvest as part of their action
-                            int successThreshold = Attacker.HasSkill("SowReap_ScytheSow") ? 6 : 3; 
+                            int successThreshold = Attacker.HasSkill("SowReap_ScytheSow") ? 8 : 4; 
 
-                            if (SowReap_Random.Next(1,20) <= successThreshold) //roll-under d20, applies status 15% of the time (on 1-3) with basic skill, applies 30% of the time (on 1-6) with upgraded skill
+                            if (SowReap_Random.Next(1,20) <= successThreshold) //roll-under d20, applies status 20% of the time (on 1-4) with basic skill, applies 40% of the time (on 1-8) with upgraded skill
                                 Defender.ApplyEffect(new SowReap_ReadyForHarvest());
                         }
                     }
