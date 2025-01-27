@@ -52,5 +52,4 @@ Explore a fully-featured skill tree to master the scythe's fickle crescent blade
 
 ## Credits/Thanks
 * Scythe design used in the mod's logo is by Lorc under CC BY 3.0, via game-icons.net
-* Spice JSON patcher code is copied from acegiak's qudkissing mod
 * Thanks to the regulars in the Caves of Qud discord modding channel for their insight and much-needed assistance!
