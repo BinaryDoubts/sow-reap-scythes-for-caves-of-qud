@@ -189,4 +189,21 @@
     <part Name="MeleeWeapon" MaxStrengthBonus="9" BaseDamage="2d8" Skill="SowReap_Scythe" />
   </object>  
 
+  <object Name="SowReap_BoneSickle" Inherits="SowReap_Sickle5">
+    <part Name="Render" DisplayName="{{pearly|bone sickle}}" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
+    <part Name="BleedingOnHit" Amount="2-3" SaveTarget="35" Stack="true" />
+    <tag Name="Tier" Value="4" />
+    <part Name="Commerce" Value="50" />
+    <part Name="Description" Short="TK The enamel curl of the blade bears no marks. The jagged TK" />
+		<stag Name="Contemporary" />
+  </object>
+
+  <object Name="SowReap_HolySickle" Inherits="SowReap_Sickle3">
+    <part Name="Render" DisplayName="{{sparkling|holy sickle}}" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
+    <tag Name="Tier" Value="4" />
+    <part Name="Commerce" Value="50" />
+    <part Name="Description" Short="TK" />
+		<part Name="SowReap_HolySickle" />
+  </object>
+
 </objects>

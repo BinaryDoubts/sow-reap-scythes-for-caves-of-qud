@@ -55,7 +55,6 @@ namespace SowReap.HarmonyPatches{
             if (scythe != null && scythe.Skill == "SowReap_Scythe"){
                 __result = "SowReap_Scythe";
             }
-
         }
     }
 

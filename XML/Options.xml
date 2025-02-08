@@ -4,6 +4,6 @@
         Category="Mods: Sow and Reap" Type="Checkbox" Default="Yes" />
     <option ID="Option_SowReap_ShowReadyForHarvestIcon" DisplayText="Flash a status icon (⌠) on targets who are ready for harvest"
         Category="Mods: Sow and Reap" Type="Checkbox" Default="No" />
-    <option ID="Option_SowReap_ShowReadyForDebug" DisplayText="Add debug information in player.log"
+    <option ID="Option_SowReap_ShowReadyForDebug" DisplayText="Write debug information in player.log"
         Category="Mods: Sow and Reap" Type="Checkbox" Default="No" />
 </options>
