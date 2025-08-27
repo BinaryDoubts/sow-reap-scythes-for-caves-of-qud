@@ -27,12 +27,18 @@ namespace XRL.World.Parts.Skill{
 
         public void CollectStats(Templates.StatCollector stats)
         {
+            int attackerStrMod = ParentObject.StatMod("Strength");
+            int attackerAgiMod = ParentObject.StatMod("Agility");
+            int modAdded = attackerStrMod > attackerAgiMod ? attackerStrMod : attackerAgiMod;
+            stats.Set("ConfusionSave", 20+modAdded);
             stats.CollectCooldownTurns(MyActivatedAbility(ActivatedAbilityID), COOLDOWN);
         }
 
         public override bool AddSkill(GameObject GO){
             ActivatedAbilityID = AddMyActivatedAbility(Name: "Vaulting Slash", 
                 Command: COMMAND_NAME, 
+                Cooldown: COOLDOWN,
+                IsAttack: true,
                 Class: "Skills");
             return base.AddSkill(GO);        
         }

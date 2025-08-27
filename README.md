@@ -43,12 +43,9 @@ Explore a fully-featured skill tree to master the scythe's fickle crescent blade
 * Spawn any sickle with "SowReap_Sickle" + the tier number
 
 ## Planned Features
-* Unique art for the skills
-* Unique art for the sickle subclass
-* Unique scythe variants
 * New quest to acquire a powerful legendary scythe
-* New sound effects
 
 ## Credits/Thanks
+* Item art created by the incredible OnlyFangs. Follow them on Twitch at https://www.twitch.tv/onlyfangs_, or on Twitter at https://x.com/onlyfangstv. 
 * Scythe design used in the mod's logo is by Lorc under CC BY 3.0, via game-icons.net
 * Thanks to the regulars in the Caves of Qud discord modding channel for their insight and much-needed assistance!

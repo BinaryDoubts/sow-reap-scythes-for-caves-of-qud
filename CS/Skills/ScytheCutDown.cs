@@ -41,6 +41,8 @@ namespace XRL.World.Parts.Skill{
         public override bool AddSkill(GameObject GO){
             ActivatedAbilityID = AddMyActivatedAbility(Name: "Cut Down", 
                 Command: COMMAND_NAME, 
+                Cooldown: COOLDOWN,
+                IsAttack: true,
                 Class: "Skills");
             return base.AddSkill(GO);        
         }

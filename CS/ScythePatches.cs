@@ -18,7 +18,7 @@ namespace SowReap.HarmonyPatches{
         [HarmonyPatch("AttemptHarvest")]
         [HarmonyPrefix]
         static void Prefix(GameObject who, Harvestable __instance){
-            //XRL.Messages.MessageQueue.AddPlayerMessage("test");
+
 
         }
 
@@ -26,7 +26,7 @@ namespace SowReap.HarmonyPatches{
         [HarmonyPostfix]
         static void Postfix(GameObject who, Harvestable __instance, bool __result){
             if (__result && who.IsPlayer() && who.HasSkill("SowReap_ScytheSow")){
-                //if (Stat.Rnd(1, 20) > 10){
+
                     string name = GameObject.Create(__instance.OnSuccess).GetDisplayName();
                     switch (name){ //if the ingredient is common/useless, don't +1 it
                         case "vinewafer":
@@ -41,7 +41,7 @@ namespace SowReap.HarmonyPatches{
                     }
                     who.TakeObject(__instance.OnSuccess, NoStack: false, Silent: true, 0, 0, 0, null, null, null, null, null);
                     XRL.Messages.MessageQueue.AddPlayerMessage("You harvest an extra " + name + "!");
-                //}
+
             }
         }
     }
@@ -85,6 +85,39 @@ namespace SowReap.HarmonyPatches{
                 foreach (string t in RelicGenerator.Types){
                         UnityEngine.Debug.LogError(t);
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(XRL.World.Parts.ModSerrated))]
+    class SowReap_SerratedPatch{
+        [HarmonyPatch("ModificationApplicable")]
+        static void Postfix(ref GameObject Object, ref bool __result){
+
+            if (Object.TryGetPart<MeleeWeapon>(out var Part) && Part.Skill == "SowReap_Scythe"){
+                __result = true;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(XRL.World.Parts.ModSharp))]
+    class SowReap_SharpApplicablePatch{
+        [HarmonyPatch("ModificationApplicable")]
+        static void Postfix(ref GameObject Object, ref bool __result){
+
+            if (Object.TryGetPart<MeleeWeapon>(out var Part) && Part.Skill == "SowReap_Scythe"){
+                __result = true;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(XRL.World.Parts.ModSharp))]
+    class SowReap_SharpApplyPatch{
+        [HarmonyPatch("ApplyModification")]
+        static void Postfix(ref GameObject Object, ref bool __result){
+
+            if (Object.TryGetPart<MeleeWeapon>(out var Part) && Part.Skill == "SowReap_Scythe"){
+                Part.PenBonus++;
             }
         }
     }

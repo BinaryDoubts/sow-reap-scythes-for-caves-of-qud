@@ -6,126 +6,59 @@ using XRL.Messages;
 using XRL.World;
 
 namespace XRL.World.Parts{
-
     [Serializable]
-    public class SowReap_HolyLight : IPart{
-        public int RADIUS = 6;
-        public LightSource light = new LightSource();
-
-        public override void Initialize()
-        {
-            _ParentObject.AddPart(light);
-            light.Radius = RADIUS;
-            base.Initialize();
-        }
-
-        public override void Remove(){
-            light.Remove();
-            base.Remove();
-        }
+    public class SowReap_SplittingScythe : IActivePart{
+        
     }
 
     [Serializable]
-    public class  SowReap_HolySickle : IPart{
+    public class SowReap_HolyScythe : ActiveLightSource{
+        static int HOLY_RADIUS = 6;
         static int RESOURCE_MAX = 500;
-        static int DRAIN_RATE = 1;
+        static int RESOURCE_DRAIN_RATE = 1;
         public int Resource = RESOURCE_MAX;
-        public bool HalfFlag = false;
-        public bool QuarterFlag = false;
-        public bool AbilityDisabled = false;
 
-        public override void Initialize()
-        {
-            
+
+        public SowReap_HolyScythe(){
+            WorksOnHolder = true;
+            Radius = 0;
         }
 
-        public override void Register(GameObject Object, IEventRegistrar Registrar){
-            Registrar.Register(GetShortDescriptionEvent.ID);
-            Registrar.Register(GetDisplayNameEvent.ID);
+        public override void Register (GameObject Object, IEventRegistrar Registrar){
             Registrar.Register(The.Game, EndTurnEvent.ID);     
             Registrar.Register(The.Player, WorshipPerformedEvent.ID);
-            Registrar.Register(_ParentObject, EquippedEvent.ID);
-            
             base.Register(Object, Registrar);
         }
 
-        public override bool HandleEvent(GetShortDescriptionEvent E){ 
-            return base.HandleEvent(E);
-        } 
+        public override bool HandleEvent(EndTurnEvent E){
+            if (IsReady()){
+                if (Resource > 0){ //even if drain rate > 1, give them one grace turn
+                    if (Radius != HOLY_RADIUS){
+                        Radius = HOLY_RADIUS;
+                    }
+                    
+                    if (Resource > (RESOURCE_MAX/2) && Resource - RESOURCE_DRAIN_RATE <= (RESOURCE_MAX/2)){
+                        MessageQueue.AddPlayerMessage("Your " + _ParentObject.ShortDisplayName + "'s holy light dims.");
+                    } 
+                    else if (Resource > (RESOURCE_MAX/4) && Resource - RESOURCE_DRAIN_RATE <= (RESOURCE_MAX/4)){
+                        MessageQueue.AddPlayerMessage("Your " + _ParentObject.ShortDisplayName + "'s holy light fades to near-nothingness.");
+                    }
+                    Resource -= RESOURCE_DRAIN_RATE;
+                }
+                else{
+                    if (Radius != 0){
+                        Radius = 0;
+                    }
+                }
+            }
 
-        public override bool HandleEvent(GetDisplayNameEvent E){ 
             return base.HandleEvent(E);
         }
 
         public override bool HandleEvent(WorshipPerformedEvent E){
             Resource = RESOURCE_MAX;
-            MessageQueue.AddPlayerMessage("Your act of devotion kindles the sickle's light.");         
+            MessageQueue.AddPlayerMessage("The act of devotion kindles your " + _ParentObject.ShortDisplayName + "'s blade-light.");         
             return base.HandleEvent(E);
-        }
-
-        public override bool HandleEvent(EquippedEvent E){
-            if (Resource > 0){
-                EnableSickleAbility();
-            }
-            return base.HandleEvent(E);
-        }
-
-        public override bool HandleEvent(EndTurnEvent E){
-            string description = "holy light fades";
-            string intensifier = "to near-nothingness";
-            bool intense = false;
-            bool warn = false;
-            
-            if (Resource <= RESOURCE_MAX/4 && !QuarterFlag){
-                QuarterFlag = true;
-                intense = true;
-                warn = true;
-            }
-            else if (Resource <= RESOURCE_MAX/2 && !HalfFlag){
-                HalfFlag = true;
-                warn = true;
-            }
-            else if (Resource > RESOURCE_MAX/2){
-                QuarterFlag = false;
-                HalfFlag = false;
-            }
-
-            if (Resource <= 0){
-                //DisableSickleAbility();
-                //Resource = 0;
-                Resource = RESOURCE_MAX;
-                    
-            }
-            else{
-                EnableSickleAbility();
-                Resource-=100;
-                MessageQueue.AddPlayerMessage("Resource left: " + Resource);
-            }
-
-            if (warn){
-                if (intense){
-                    description = description + " " + intensifier;
-                }
-                MessageQueue.AddPlayerMessage("Your " + _ParentObject.ShortDisplayName + "'s " + description + ".");
-            }
-            return base.HandleEvent(E);
-        }
-
-        public void EnableSickleAbility(){
-            SowReap_HolyLight light = _ParentObject.GetPart<SowReap_HolyLight>();
-            if (light != null){
-                light.light.Lit = true;
-            }
-            else{
-                _ParentObject.AddPart<SowReap_HolyLight>();
-            }
-        }
-
-        public void DisableSickleAbility(){
-            SowReap_HolyLight light = _ParentObject.GetPart<SowReap_HolyLight>();
-            if (light != null){
-                light.light.Lit = false;
-            }
         }
 
     }
