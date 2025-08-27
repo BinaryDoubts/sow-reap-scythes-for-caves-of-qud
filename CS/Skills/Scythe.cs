@@ -59,7 +59,7 @@ namespace XRL.World.Parts.Skill{
                         }
                     }
 
-                    if (eventParams.HasDelimitedSubstring(",", "SowReap_VaultingSlashAttack")){ //handle the vaulting slasha activated skill
+                    if (eventParams.HasDelimitedSubstring(",", "SowReap_VaultingSlashAttack")){ //handle the vaulting slash activated skill
                         if (Defender.HasEffect<SowReap_ReadyForHarvest>()){
                             int attackerStrMod = Attacker.StatMod("Strength");
                             int attackerAgiMod = Attacker.StatMod("Agility");

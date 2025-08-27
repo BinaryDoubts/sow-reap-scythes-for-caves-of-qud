@@ -7,14 +7,17 @@
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sow_reap_scythe.png" Foreground="r" Detail="y" />
+        <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandVaultingSlash">
         <description>
             <p>You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone.</p>
             <br />
+            <statline Name="ConfusionSave" DisplayName="Confusion save"/>
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sow_reap_scythe.png" Foreground="g" Detail="y" />
+        <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandCutDown">
         <description>
@@ -23,6 +26,7 @@
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sow_reap_scythe.png" Foreground="b" Detail="y" />
+        <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandWhirlwind">
         <description>
@@ -31,5 +35,6 @@
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sow_reap_scythe.png" Foreground="O" Detail="y" />
+        <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
 </activatedabilities>

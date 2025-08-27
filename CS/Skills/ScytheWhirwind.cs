@@ -34,7 +34,9 @@ namespace XRL.World.Parts.Skill{
 
         public override bool AddSkill(GameObject GO){
             ActivatedAbilityID = AddMyActivatedAbility(Name: "Swhirlwind", 
-                Command: COMMAND_NAME, 
+                Command: COMMAND_NAME,
+                Cooldown: COOLDOWN,
+                IsAttack: false,                 
                 Class: "Skills");
             return base.AddSkill(GO);        
         }

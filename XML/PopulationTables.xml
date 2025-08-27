@@ -21,10 +21,22 @@
     </group>
   </population>
 
+  <population Name="Melee Weapons 2R">
+    <group Name="Items" Load="Merge">
+      <object Weight="10" Number="1" Blueprint="SowReap_HolyScythe" />
+    </group>
+  </population>
+
   <population Name = "Melee Weapons 3C" Load = "Merge">
     <group Name="Items" Load="Merge">
       <object Blueprint="SowReap_Scythe3" Weight = "15" Number = "1"/>
       <object Blueprint="SowReap_Sickle3" Weight="10" Number="1"/>      
+    </group>
+  </population>
+
+  <population Name="Melee Weapons 3R">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="SowReap_HolyScythe" />
     </group>
   </population>
 
@@ -35,6 +47,12 @@
     </group>
   </population>
 
+  <population Name="Melee Weapons 4R">
+    <group Name="Items" Load="Merge">
+      <object Weight="10" Number="1" Blueprint="SowReap_Bone_Sickle" />
+    </group>
+  </population>
+
   <population Name = "Melee Weapons 5C" Load = "Merge">
     <group Name="Items" Load="Merge">
       <object Blueprint="SowReap_Scythe5" Weight = "15" Number = "1"/>
@@ -42,10 +60,23 @@
     </group>
   </population>
 
+  <population Name="Melee Weapons 5R">
+    <group Name="Items" Load="Merge">
+      <object Weight="10" Number="1" Blueprint="SowReap_SplittingScythe" />
+      <object Weight="20" Number="1" Blueprint="SowReap_Bone_Sickle" />
+    </group>
+  </population>
+
   <population Name = "Melee Weapons 6C" Load = "Merge">
     <group Name="Items" Load="Merge">
       <object Blueprint="SowReap_Scythe6" Weight = "15" Number = "1"/>
       <object Blueprint="SowReap_Sickle6" Weight="10" Number="1"/>
+    </group>
+  </population>
+
+  <population Name="Melee Weapons 6R">
+    <group Name="Items" Load="Merge">
+      <object Weight="20" Number="1" Blueprint="SowReap_SplittingScythe" />
     </group>
   </population>
 

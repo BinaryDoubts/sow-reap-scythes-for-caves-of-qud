@@ -2,15 +2,15 @@
 <objects>
   <!-- Scythes -->
   <object Name="SowReap_UnknownScythe" Inherits="BaseUnknown">
-	  <part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sow_reap_scythe1.png" />
+	  <part Name="Render" DisplayName="scythe" RenderString="\" Tile="Items/sowreap_scythe_bronze.png" />
 	  <part Name="Description" Short="A sweeping chine arches out from a sturdy snath." />
   </object>
 
   <object Name="SowReap_BaseScythe" Inherits="MeleeWeapon">
     <part Name="MeleeWeapon" Skill="SowReap_Scythe" />
-    <tag Name="Mods" Value="BladeMods,WeaponMods,CommonMods" />
+    <tag Name="Mods" Value="LongBladeMods,AxeMods,BladeMods,WeaponMods,CommonMods" />
     <part Name="Physics" Weight="5" />
-    <part Name="Render" Tile="items/sow_reap_scythe1.png" DetailColor="y" />
+    <part Name="Render" Tile="Items/sowreap_scythe_bronze.png" DetailColor="y" />
     <part Name="Examiner" Alternate="SowReapUnknownScythe" />
     <tag Name="BaseObject" Value="*noinherit" />
 		<tag Name="SwingSound" Value="Sounds/Melee/longBlades/sfx_melee_longBlade_metal_swing" />
@@ -18,7 +18,7 @@
   </object>
 
   <object Name="SowReap_Scythe" Inherits="SowReap_BaseScythe">
-      <part Name="Render" DisplayName="two-handed {{w|bronze}} scythe" Tile="Items/sow_reap_scythe.png" ColorString="&amp;w"/>
+      <part Name="Render" DisplayName="two-handed {{w|bronze}} scythe" Tile="Items/sowreap_scythe_bronze.png" ColorString="&amp;w"/>
       <part Name="Physics" Weight="9" UsesTwoSlots="true" />
       <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="1" BaseDamage="1d6" Skill="SowReap_Scythe" />
       <part Name="Commerce" Value="5" />
@@ -30,14 +30,14 @@
   </object>
 
   <object Name = "SowReap_Sickle" Inherits="SowReap_Scythe">
-      <part Name="Render" DisplayName="{{w|bronze}} sickle" Tile="Items/sow_reap_scythe.png" ColorString="&amp;w"/>
+      <part Name="Render" DisplayName="{{w|bronze}} sickle" Tile="Items/sowreap_sickle_bronze.png" ColorString="&amp;w"/>
       <part Name="Physics" Weight="5" UsesTwoSlots="false"/>
       <part Name="MeleeWeapon" MaxStrengthBonus="1" BaseDamage="1d3" Skill="SowReap_Scythe" />
       <part Name="Description" Short="Nicks pit the edge of the sickle, evidence of a hundred harvests spelled out across timeworn metal." />
   </object>
 
   <object Name="SowReap_Scythe1" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed iron scythe" Tile="Items/sow_reap_scythe1.png" ColorString="&amp;y" />
+    <part Name="Render" DisplayName="two-handed iron scythe" Tile="Items/sowreap_scythe_bronze.png" ColorString="&amp;y" />
     <part Name="Physics" Weight="9" UsesTwoSlots="true" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="2" BaseDamage="1d8" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="15" />
@@ -48,14 +48,14 @@
   </object>
 
   <object Name = "SowReap_Sickle1" Inherits="SowReap_Scythe1">
-      <part Name="Render" DisplayName="iron sickle" Tile="Items/sow_reap_scythe1.png" ColorString="&amp;y"/>
+      <part Name="Render" DisplayName="iron sickle" Tile="Items/sowreap_sickle_bronze.png" ColorString="&amp;y"/>
       <part Name="Physics" Weight="5" UsesTwoSlots="false"/>
       <part Name="MeleeWeapon" MaxStrengthBonus="2" BaseDamage="1d4" Skill="SowReap_Scythe" />
       <part Name="Description" Short="Iron was taught the shape of the moon's wane, then lashed to an abbreviated haft." />
   </object>
 
   <object Name="SowReap_Scythe2" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed {{Y|steel}} scythe" Tile="Items/sow_reap_scythe2.png" ColorString="&amp;Y" />
+    <part Name="Render" DisplayName="two-handed {{Y|steel}} scythe" Tile="Items/sowreap_scythe_bronze.png" ColorString="&amp;Y" />
     <part Name="Physics" Weight="10" UsesTwoSlots="true" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="3" BaseDamage="1d10" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="30" />
@@ -66,13 +66,13 @@
   </object>
 
   <object Name="SowReap_Sickle2" Inherits="SowReap_Scythe2">
-    <part Name="Render" DisplayName="{{Y|steel}} sickle" Tile="Items/sow_reap_scythe2.png" ColorString="&amp;Y" />
+    <part Name="Render" DisplayName="{{Y|steel}} sickle" Tile="Items/sowreap_sickle_bronze.png" ColorString="&amp;Y" />
     <part Name="Physics" Weight="6" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="3" BaseDamage="1d6" Skill="SowReap_Scythe" />
   </object>
 
   <object Name="SowReap_Scythe3" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed {{b|carbide}} scythe" Tile="Items/sow_reap_scythe3.png" ColorString="&amp;b" />
+    <part Name="Render" DisplayName="two-handed {{b|carbide}} scythe" Tile="Items/sowreap_scythe_carbide.png" ColorString="&amp;b" />
     <part Name="Physics" Weight="11" UsesTwoSlots="true" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="4" BaseDamage="1d12" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="50" />
@@ -83,14 +83,14 @@
   </object>
 
   <object Name="SowReap_Sickle3" Inherits="SowReap_Scythe3">
-    <part Name="Render" DisplayName="{{b|carbide}} sickle" Tile="Items/sow_reap_scythe3.png" ColorString="&amp;b" />
+    <part Name="Render" DisplayName="{{b|carbide}} sickle" Tile="Items/sowreap_sickle_carbide.png" ColorString="&amp;b" />
     <part Name="Physics" Weight="6" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="4" BaseDamage="1d8" Skill="SowReap_Scythe" />
     <part Name="Description" Short="Azure battle-metal was forged with great care into a sharp crescent at the head of a short handle." />
   </object>
 
   <object Name="SowReap_Scythe4" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed {{b|folded carbide}} scythe" Tile="Items/sow_reap_scythe4.png" ColorString="&amp;B" />
+    <part Name="Render" DisplayName="two-handed {{b|folded carbide}} scythe" Tile="Items/sowreap_scythe_carbide.png" ColorString="&amp;B" />
     <part Name="Physics" Weight="9" UsesTwoSlots="true" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="5" BaseDamage="2d6" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="75" />
@@ -101,13 +101,13 @@
   </object>        
 
   <object Name="SowReap_Sickle4" Inherits="SowReap_Scythe4">
-    <part Name="Render" DisplayName="{{b|folded carbide}} sickle" Tile="Items/sow_reap_scythe4.png" ColorString="&amp;B" />
+    <part Name="Render" DisplayName="{{b|folded carbide}} sickle" Tile="Items/sowreap_sickle_carbide.png" ColorString="&amp;B" />
     <part Name="Physics" Weight="5" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="5" BaseDamage="1d10" Skill="SowReap_Scythe" />
   </object>   
 
   <object Name="SowReap_Scythe5" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed {{K|fullerite}} scythe" Tile="Items/sow_reap_scythe5.png" ColorString="&amp;K" />
+    <part Name="Render" DisplayName="two-handed {{K|fullerite}} scythe" Tile="Items/sowreap_scythe_fullerite.png" ColorString="&amp;K" />
     <part Name="Physics" Weight="18" UsesTwoSlots="true" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="6" BaseDamage="2d6+1" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="150" />
@@ -120,13 +120,13 @@
   </object>    
 
   <object Name="SowReap_Sickle5" Inherits="SowReap_Scythe5">
-    <part Name="Render" DisplayName="{{K|fullerite}} sickle" Tile="Items/sow_reap_scythe5.png" ColorString="&amp;K" />
+    <part Name="Render" DisplayName="{{K|fullerite}} sickle" Tile="Items/sowreap_sickle_fullerite.png" ColorString="&amp;K" />
     <part Name="Physics" Weight="9" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="6" BaseDamage="1d12" Skill="SowReap_Scythe" />
   </object>  
 
   <object Name="SowReap_Scythe6" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="{{K|two-handed {{crysteel|crysteel}} scythe}}" Tile="Items/sow_reap_scythe6.png" ColorString="&amp;g" DetailColor="K"/>
+    <part Name="Render" DisplayName="{{K|two-handed {{crysteel|crysteel}} scythe}}" Tile="Items/sowreap_scythe_crysteel.png" ColorString="&amp;g" DetailColor="K"/>
     <part Name="Physics" Weight="9" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="7" BaseDamage="2d8" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="400" />
@@ -140,13 +140,13 @@
   </object>  
 
   <object Name="SowReap_Sickle6" Inherits="SowReap_Scythe6">
-    <part Name="Render" DisplayName="{{K|{{crysteel|crysteel}} sickle}}" Tile="Items/sow_reap_scythe6.png" ColorString="&amp;g" DetailColor="K" />
+    <part Name="Render" DisplayName="{{K|{{crysteel|crysteel}} sickle}}" Tile="Items/sowreap_sickle_crysteel.png" ColorString="&amp;g" DetailColor="K" />
     <part Name="Physics" Weight="5" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="7" BaseDamage="2d6" Skill="SowReap_Scythe" />
   </object>  
 
   <object Name="SowReap_Scythe7" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="{{K|two-handed flawless {{crysteel|crysteel}} scythe}}" Tile="Items/sow_reap_scythe7.png" ColorString="&amp;G" DetailColor="K"/>
+    <part Name="Render" DisplayName="{{K|two-handed flawless {{crysteel|crysteel}} scythe}}" Tile="Items/sowreap_scythe_crysteel.png" ColorString="&amp;G" DetailColor="K"/>
     <part Name="Physics" Weight="9" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="8" BaseDamage="2d10" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="800" />
@@ -161,13 +161,13 @@
   </object>   
 
   <object Name="SowReap_Sickle7" Inherits="SowReap_Scythe7">
-    <part Name="Render" DisplayName="{{K|flawless {{crysteel|crysteel}} sickle}}" Tile="Items/sow_reap_scythe7.png" ColorString="&amp;G" DetailColor="K" />
+    <part Name="Render" DisplayName="{{K|flawless {{crysteel|crysteel}} sickle}}" Tile="Items/sowreap_sickle_crysteel.png" ColorString="&amp;G" DetailColor="K" />
     <part Name="Physics" Weight="5" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="8" BaseDamage="2d6+1" Skill="SowReap_Scythe" />
   </object>  
 
   <object Name="SowReap_Scythe8" Inherits="SowReap_BaseScythe">
-    <part Name="Render" DisplayName="two-handed {{zetachrome|zetachrome}} scythe" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
+    <part Name="Render" DisplayName="two-handed {{zetachrome|zetachrome}} scythe" Tile="Items/sowreap_scythe_zetachrome.png" ColorString="&amp;m" />
     <part Name="Physics" Weight="10" UsesTwoSlots="true" FlameTemperature="99999" VaporTemperature="9999" />
     <part Name="MeleeWeapon" PenBonus="1" MaxStrengthBonus="9" BaseDamage="2d12" Skill="SowReap_Scythe" />
     <part Name="Commerce" Value="1500" />
@@ -184,26 +184,59 @@
   </object>   
 
   <object Name="SowReap_Sickle8" Inherits="SowReap_Scythe8">
-    <part Name="Render" DisplayName="{{zetachrome|zetachrome}} sickle}}" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
+    <part Name="Render" DisplayName="{{zetachrome|zetachrome}} sickle}}" Tile="Items/sowreap_sickle_zetachrome.png" ColorString="&amp;m" />
     <part Name="Physics" Weight="6" UsesTwoSlots="false" />
     <part Name="MeleeWeapon" MaxStrengthBonus="9" BaseDamage="2d8" Skill="SowReap_Scythe" />
   </object>  
 
+<!-- Special Scythe/Sickles -->
+
   <object Name="SowReap_BoneSickle" Inherits="SowReap_Sickle5">
-    <part Name="Render" DisplayName="{{pearly|bone sickle}}" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
+    <part Name="Render" DisplayName="{{pearly|bone sickle}}" Tile="Items/sowreap_bone_sickle.png" ColorString="&amp;m" />
     <part Name="BleedingOnHit" Amount="2-3" SaveTarget="35" Stack="true" />
     <tag Name="Tier" Value="4" />
-    <part Name="Commerce" Value="50" />
-    <part Name="Description" Short="TK The enamel curl of the blade bears no marks. The jagged TK" />
+    <part Name="Commerce" Value="100" />
+    <part Name="Description" Short="The jaw of the Malthuun boar projects great spirals of gleaming enamel. They curl ever-inward, growing in a display of pack-status until the eldest boars struggle to lift their heads, straining at the weight of their hard-won tuskspirals. In the Deep Plains, boar-shepherds cull the defective and the warlike, claiming their sharp-grown tusks as Gods-given tools." />
 		<stag Name="Contemporary" />
   </object>
 
   <object Name="SowReap_HolySickle" Inherits="SowReap_Sickle3">
-    <part Name="Render" DisplayName="{{sparkling|holy sickle}}" Tile="Items/sow_reap_scythe8.png" ColorString="&amp;m" />
-    <tag Name="Tier" Value="4" />
-    <part Name="Commerce" Value="50" />
+    <part Name="Render" DisplayName="{{sparkling|holy sickle}}" Tile="Items/sowreap_holy_sickle.png" ColorString="&amp;m" />
+    <tag Name="Tier" Value="34" />
+    <part Name="Commerce" Value="200" />
+    <part Name="Description" Short="The materialist would say faith is a product of nanoscale electrical impulses, signals that can be mapped and known. Surely, the machine can listen for these signals, and act in turn. A feedback loop of light spun from your own web of neurons. A parlour trick, and nothing more.
+    
+    Surely that's all." />
+    <part Name="RulesDescription" Text="Provides illumination while your faith remains strong. Prayer will renew your blade's light." />
+		<part Name="SowReap_HolyScythe" />
+  </object>
+
+  <object Name="SowReap_HolyScythe" Inherits="SowReap_Scythe3">
+    <part Name="Render" DisplayName="{{sparkling|holy scythe}}" Tile="Items/sowreap_holy_scythe.png" ColorString="&amp;m" />
+    <tag Name="Tier" Value="3" />
+    <part Name="Commerce" Value="200" />
+    <part Name="Description" Short="The materialist would say faith is a product of nanoscale electrical impulses, signals that can be mapped and known. Surely, the machine can listen for these signals, and act in turn. A feedback loop of light spun from your own web of neurons. A parlour trick, and nothing more.
+    
+    Surely that's all." />
+    <part Name="RulesDescription" Text="Provides illumination while your faith remains strong. Prayer will renew your blade's light." />
+		<part Name="SowReap_HolyScythe" />
+  </object>
+
+  <object Name="SowReap_SplittingScythe" Inherits="SowReap_Scythe6">
+    <part Name="Render" DisplayName="{{K|{{mercurial|splitting}} scythe}}" Tile="Items/sowreap_splitting_scythe.png" ColorString="&amp;G" />
+    <tag Name="Tier" Value="6" />
+    <part Name="Commerce" Value="500" />
+    <part Name="Description" Short="Only one part of this weapon exists in your time and space. It takes turns with its sibling, trading this reality for another. Sometimes, it returns covered in impossible ferrofluid, a harbinger of the Other-Place." />
+    <part Name="RulesDescription" Text="While equipped, Harvest Moon hits every space adjacent to you, instead of the usual 3." />
+		<part Name="SowReap_SplittingScythe" WorksOnHolder="true" />
+  </object>
+
+  <object Name="SowReap_LegendaryScythe" Inherits="SowReap_Scythe8">
+    <part Name="Render" DisplayName="TK scythe}}" Tile="Items/sowreap_legendary_scythe.png" ColorString="&amp;m" />
+    <tag Name="Tier" Value="8" />
+    <part Name="Commerce" Value="2000" />
     <part Name="Description" Short="TK" />
-		<part Name="SowReap_HolySickle" />
+		<part Name="SowReap_HolyScythe" />
   </object>
 
 </objects>

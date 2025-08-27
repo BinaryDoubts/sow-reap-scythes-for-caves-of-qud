@@ -44,6 +44,8 @@ namespace XRL.World.Parts.Skill{
         public override bool AddSkill(GameObject GO){
             ActivatedAbilityID = AddMyActivatedAbility(Name: "Harvest Moon", 
                 Command: COMMAND_NAME, 
+                Cooldown: COOLDOWN,
+                IsAttack: true,
                 Class: "Skills");
             return base.AddSkill(GO);        
         }
@@ -91,12 +93,20 @@ namespace XRL.World.Parts.Skill{
             string targetDirection = PickDirectionS("Harvest Moon"); //choose target cell
 
             Cell attackerCell = ParentObject.GetCurrentCell();
-            string[] adjacentDirections = Directions.GetAdjacentDirections(targetDirection); //get two other adjacent cells (thank you Directions class we love to see it)
-            Cell[] targetCells = {
-                attackerCell.GetCellFromDirection(adjacentDirections[0]), //clockwise order
-                attackerCell.GetCellFromDirection(targetDirection),
-                attackerCell.GetCellFromDirection(adjacentDirections[1])
-            };
+            List<Cell> targetCells = new List<Cell>();
+            GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_Scythe");
+
+            if (scythe.HasPart("SowReap_SplittingScythe")){
+                targetCells = attackerCell.GetAdjacentCells();
+            }
+            else{
+                string[] adjacentDirections = Directions.GetAdjacentDirections(targetDirection); //get two other adjacent cells (thank you Directions class we love to see it)
+
+                targetCells.Add(attackerCell.GetCellFromDirection(adjacentDirections[0])); //clockwise order
+                targetCells.Add(attackerCell.GetCellFromDirection(targetDirection));
+                targetCells.Add(attackerCell.GetCellFromDirection(adjacentDirections[1]));
+
+            }
 
             /*XRL.Messages.MessageQueue.AddPlayerMessage(adjacentDirections[0]);
             XRL.Messages.MessageQueue.AddPlayerMessage(targetDirection);
@@ -116,7 +126,6 @@ namespace XRL.World.Parts.Skill{
             }
 
             if (combatTargets.Count() > 0){
-                GameObject scythe = ParentObject.GetPrimaryWeaponOfType("SowReap_Scythe");
                 foreach (GameObject target in combatTargets){
                     MeleeAttackResult attackRes = Combat.MeleeAttackWithWeapon(
                         Attacker: ParentObject,
