@@ -6,7 +6,7 @@
         Cost = "100" 
         Attribute = "Agility|Strength" 
         Minimum="0" 
-        Tile="Items/sowreap_scythe.png" 
+        Tile="Items/sowreap_scythe_bronze.png" 
         Foreground="w" 
         Detail="y"
     >
@@ -19,7 +19,7 @@
             Description="You get +2 to hit with scythes.
 Opponents you hit with a basic scythe attack have a 20% chance to become ready for harvest. 
 Active scythe abilities consume the ready for harvest status to increase their effect."
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="c" Detail="y"
         />
         <power Name="Sow" 
@@ -31,7 +31,7 @@ Active scythe abilities consume the ready for harvest status to increase their e
             Description="You get an additional +2 to hit when attacking plants or fungi.
 Your chance to make opponents ready for harvest increases to 40%. 
 You collect an additional ingredient whenever you harvest a rare plant."
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="C" Detail="y"
         />
         <power Name="Cut Down" 
@@ -41,7 +41,7 @@ You collect an additional ingredient whenever you harvest a rare plant."
             Class="SowReap_ScytheCutDown" 
             Snippet="cutting down" 
             Description="Activated; cooldown 50. Scythe attack. If you hit and penetrate, dismember one of your target's mobility-granting appendages and inflict bleeding. If the target is ready for harvest, dismember an additional appendage and inflict additional bleeding." 
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="g" Detail="y"
         />
         <power Name="Vaulting Slash" 
@@ -51,7 +51,7 @@ You collect an additional ingredient whenever you harvest a rare plant."
             Class="SowReap_ScytheVaultingSlash" 
             Snippet="vaulting" 
             Description="Activated; cooldown 40. You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone."
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="b" Detail="y"
         />
         <power Name="Swhirlwind" 
@@ -61,7 +61,7 @@ You collect an additional ingredient whenever you harvest a rare plant."
             Class="SowReap_ScytheWhirlwind" 
             Snippet="swirling" 
             Description="Activated; cooldown 40. You swirl your scythe through the air, gathering up all gasses on your space and all adjacent spaces before depositing the gas mix on an adjacent space. If the space is occupied by an opponent, they immediately become ready for harvest."
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="O" Detail="y"
         />
         <power Name="Harvest Moon" 
@@ -71,7 +71,7 @@ You collect an additional ingredient whenever you harvest a rare plant."
             Class="SowReap_ScytheHarvestMoon" 
             Snippet="harvesting" 
             Description="Activated; cooldown 60. You make a sweeping attack in a chosen direction, hitting three spaces at once. Any opponents you hit who are ready for harvest take double damage."
-            Tile="Items/sowreap_scythe.png" 
+            Tile="Items/sowreap_scythe_bronze.png" 
             Foreground="r" Detail="y"
         />
 
