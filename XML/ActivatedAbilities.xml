@@ -6,7 +6,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe.png" Foreground="r" Detail="y" />
+        <UITile Tile="Items/sowreap_scythe_carbide.png" Foreground="r" Detail="y" />
         <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandVaultingSlash">
@@ -16,7 +16,7 @@
             <statline Name="ConfusionSave" DisplayName="Confusion save"/>
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe.png" Foreground="g" Detail="y" />
+        <UITile Tile="Items/sowreap_scythe_carbide.png" Foreground="g" Detail="y" />
         <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandCutDown">
@@ -25,7 +25,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe.png" Foreground="b" Detail="y" />
+        <UITile Tile="Items/sowreap_scythe_carbide.png" Foreground="b" Detail="y" />
         <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
     <ability Command="SowReap_CommandWhirlwind">
@@ -34,7 +34,7 @@
             <br />
             <statline Name="Cooldown" Unit="round"/>
         </description>
-        <UITile Tile="Items/sow_reap_scythe.png" Foreground="O" Detail="y" />
+        <UITile Tile="Items/sowreap_scythe_carbide.png" Foreground="O" Detail="y" />
         <tag Name="Skill">SowReap_Scythe</tag>
     </ability>
 </activatedabilities>

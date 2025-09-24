@@ -6,3 +6,4 @@ bin
 *.DotSettings
 *.DotSettings.user
 *.code-workspace
+workshop.json
