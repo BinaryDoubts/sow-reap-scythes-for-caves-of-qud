@@ -14,6 +14,7 @@
             <p>You flip over an adjacent opponent, attacking them mid-air before landing behind them. If you hit and the opponent is ready for harvest, they become bamboozled: confused (willpower save; difficulty 20 + your highest modifier between strength/agility) and knocked prone.</p>
             <br />
             <statline Name="ConfusionSave" DisplayName="Confusion save"/>
+            <statline Name="ConfusionSave" DisplayName="Confusion save"/>
             <statline Name="Cooldown" Unit="round"/>
         </description>
         <UITile Tile="Items/sowreap_scythe_carbide.png" Foreground="g" Detail="y" />
