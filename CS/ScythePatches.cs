@@ -1,5 +1,4 @@
 using HarmonyLib;
-using PlayFab.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
